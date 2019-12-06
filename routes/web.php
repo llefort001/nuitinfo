@@ -14,6 +14,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/', 'HomeController@landing')->name('landing');
+Route::get('/aide', 'HomeController@help')->name('help');
 
 
 Route::group(['as' => 'laravelpwa.'], function()
