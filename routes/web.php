@@ -10,17 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+
+Route::group(['as' => 'laravelpwa.'], function()
+{
+    Route::get('/manifest.json', 'LaravelPWAController@manifestJson')->name('manifest');
+    Route::get('/offline/', 'LaravelPWAController@offline');
 });
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
