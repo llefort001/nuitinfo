@@ -1,3 +1,20 @@
 .navbar .navbar-brand {
     position: unset;
 }
+.video_pres {
+    position:relative;
+    height: 600px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.image_presentation{
+    height: 500px;
+}
+
+.verif, .partenaire, .partenaire_title, .find_, .find_us, .informations_to_find {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+

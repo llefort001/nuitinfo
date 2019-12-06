@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class HomeController extends Controller
 {
     /**
@@ -29,6 +31,12 @@ class HomeController extends Controller
         return view('landing');
     }
 
+    public function postHelpForm(Request $request)
+    {
+        $response = "Votre demande a bien été prise en compte";
+
+        return view('help')->with(array("response"=>$response));
+    }
     public function help()
     {
         return view('help');

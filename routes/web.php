@@ -14,7 +14,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/', 'HomeController@landing')->name('landing');
-Route::get('/aide', 'HomeController@help')->name('help');
+Route::get('/aide', 'HomeController@help')->name('aide');
+Route::post('/confirmation', 'HomeController@postHelpForm')->name('postHelpForm');
 
 
 Route::group(['as' => 'laravelpwa.'], function()
